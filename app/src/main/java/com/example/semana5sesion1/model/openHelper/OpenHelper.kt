@@ -56,4 +56,12 @@ class OpenHelper(context:Context): SQLiteOpenHelper(
         db.delete("users", "_ID=?", arrayOf(id.toString()))
         db.close()
     }
+
+    fun editUser(usu: Usuario){
+        val datos = ContentValues()
+        datos.put("nombre",usu.nombre)
+        datos.put("edad", usu.edad)
+        datos.put("mail", usu.mail)
+        this.writableDatabase.update("users", datos, "_ID=?", arrayOf(usu.id.toString()))
+    }
 }
