@@ -87,7 +87,9 @@ fun Lists(viewModel: UsuViewModel, context: Context, rememberScreen: NavHostCont
                             Icon(Icons.Default.Delete, contentDescription = null)
                         }
                         IconButton(
-                            onClick = {}
+                            onClick = {
+                                rememberScreen.navigate("S3/${it.id}")
+                            }
                         ) {
                             Icon(Icons.Default.Create, contentDescription = null)
                         }
