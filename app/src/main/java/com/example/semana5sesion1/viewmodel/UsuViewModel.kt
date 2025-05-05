@@ -26,4 +26,9 @@ class UsuViewModel (): ViewModel(){
         var dbHelper = OpenHelper(context)
         dbHelper.deleteUser(id)
     }
+
+    fun editUser(context: Context,usu: Usuario){
+        var dbHelper = OpenHelper(context)
+        dbHelper.editUser(usu)
+    }
 }
