@@ -16,12 +16,6 @@ fun Navigation(viewModel: UsuViewModel, context: Context){
     NavHost(navController=rememberScreen, startDestination="S1"){
         composable("S1"){Home(viewModel, context, rememberScreen)}
         composable("S2"){Lists(viewModel, context, rememberScreen)}
-        composable("S3/{userId}") { backStackEntry ->
-            val userId = backStackEntry.arguments?.getString("userId")?.toIntOrNull()
-            val usuario = viewModel.userslist.find { it.id == userId }
-            if (usuario != null) {
-                Edit(viewModel, context, rememberScreen, usuario)
-            }
-        }
+        composable("S3/{userId}/edit") { Edit(viewModel, context, rememberScreen)}
     }
 }
